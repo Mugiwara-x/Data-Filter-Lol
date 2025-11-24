@@ -1,0 +1,7 @@
+{
+    "Thresh vs Blitz < 25 minutes": [
+        "gameDuration_lt_1500",
+        "champ_played_Thresh",
+        "champ_played_Blitzcrank"
+    ]
+}
