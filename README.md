@@ -1,74 +1,81 @@
-LoL Data Filter — Projet ESGI
+📘 LoL Data Filter — Projet ESGI
 
-Projet Python permettant d’explorer, filtrer et analyser un dataset de parties de League of Legends.
-Le programme se lance dans un terminal et propose un menu interactif.
+Outil en Python permettant de charger, filtrer, trier et analyser un dataset de parties de League of Legends.
+Le programme fonctionne entièrement en terminal, via des menus simples et clairs.
 
 📁 Contenu du projet
 
-Chargement du fichier games.csv
+Le projet charge un dataset CSV contenant des milliers de parties LoL, puis l’enrichit automatiquement grâce à trois fichiers JSON :
 
-Enrichissement automatique avec plusieurs fichiers JSON :
+champion_info.json
 
-Informations champions
+champion_info_2.json
 
-Informations spells
+summoner_spell_info.json
 
-Tags / rôles des champions
+Le programme convertit ensuite tout en objets Python exploitables pour les filtres, tris et analyses.
 
-Tout est ensuite transformé en une liste d’objets Python exploitable.
-
-🔎 Fonctionnalités
-Filtres
+🔎 Fonctionnalités principales
+🔍 Filtres
 
 Par champ numérique (gameDuration, firstDragon, etc.)
 
-Par opérateur : ==, !=, <, <=, >, >=
+Opérateurs : ==, !=, <, <=, >, >=
 
-Par taille de liste (t1_champ_ids, etc.)
+Par taille de liste (t1_champ_ids, t1_bans, etc.)
 
 Par champion joué
 
 Par champion banni
 
-Par rôle (Assassin, Tank, Mage…)
+Par rôle (tag) : Assassin, Tank, Mage…
 
 Historique des filtres
 
-Réinitialisation des données à tout moment
+Réinitialisation à tout moment
 
-Tri
+↕️ Tri
 
-Tri par n’importe quel champ numérique
+Tri par n’importe quel champ disponible
 
-Ordre ascendant ou descendant
+Ordre croissant ou décroissant
 
-Statistiques
+📊 Statistiques
+Statistiques générales
 
-Statistiques générales : min/max/moyenne
+Minimum / Maximum / Moyenne pour chaque champ
 
-Statistiques avancées League of Legends :
+Tailles des listes
 
-Winrate global
+Statistiques avancées LoL
 
-Impact des premiers objectifs
+Winrate global de Team 1
 
-Top champions par parties jouées
+Impact des premiers objectifs (first Dragon, first Baron, etc.)
 
-Top winrates
+Top champions par nombre de parties
 
-Statistiques d’un champion précis
+Top champions par winrate
 
-Presets
+Stats détaillées d’un champion précis
 
-Sauvegarde des filtres sous un nom personnalisé
+🧩 Presets de filtres
 
-Chargement de presets existants
+Vous pouvez :
 
-Suppression de presets
+Sauvegarder les filtres actuels sous un nom personnalisé
 
-Stockage dans presets/presets.json
+Charger un preset existant en un clic
 
-Sauvegarde multi-formats
+Supprimer un preset
+
+Les presets sont enregistrés dans :
+
+presets/presets.json
+
+💾 Sauvegarde multi-formats
+
+Export des données filtrées en :
 
 CSV
 
@@ -77,7 +84,13 @@ JSON
 XML
 
 YAML
-Tous les fichiers sont enregistrés dans le dossier sauvegarde/.
+
+Tous les fichiers sont sauvegardés automatiquement dans :
+
+sauvegarde/
+
+
+Avec un nom basé sur les filtres actifs (ex : champ_played_Thresh_ge_3000.yaml).
 
 ▶️ Lancer le programme
 
@@ -85,12 +98,9 @@ Installer Python 3
 
 Ouvrir un terminal dans le dossier du projet
 
-Lancer :
+Lancer le programme :
 
 python main.py
-
-
-Le menu s’affichera automatiquement.
 
 📦 Structure du projet
 Data Filter/
@@ -103,22 +113,22 @@ Data Filter/
 │── io_formats.py
 │── presets.py
 │── presets/
-│   └── presets.json   (créé automatiquement)
+│   └── presets.json     (créé automatiquement)
 │── sauvegarde/
-│   └── ...            (fichiers exportés)
+│   └── ...              (fichiers exportés)
 │── Dataset/
     ├── games.csv
     ├── champion_info.json
     ├── champion_info_2.json
     └── summoner_spell_info.json
 
-👥 Utilisation en groupe
+👥 Travail en groupe
 
-Chaque membre peut cloner le projet :
+Pour récupérer le projet :
 
-git clone https://github.com/Mugiwara-x/Data-Filter-Lol
+git clone https://github.com/<TON_PSEUDO>/<TON_REPO>.git
 
 
-Puis exécuter :
+Puis :
 
 python main.py
